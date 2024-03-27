@@ -30,7 +30,7 @@ jobs:
         run: cp package.json ./dist/package.json
 
       - name: Copy Readme
-        run: cp npm-readme.md ./dist/Readme.md
+        run: cp Readme.md ./dist/Readme.md
 
       - name: Publish to npm
         run: |
