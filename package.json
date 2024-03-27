@@ -28,7 +28,8 @@
   "homepage": "https://github.com/balajiudayagiri/dsui#readme",
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
