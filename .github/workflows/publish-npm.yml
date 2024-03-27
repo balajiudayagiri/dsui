@@ -32,6 +32,11 @@ jobs:
       - name: Copy Readme
         run: cp Readme.md ./dist/Readme.md
 
+      - name: Update version
+        run: |
+          cd ./dist
+          npx semantic-release
+
       - name: Publish to npm
         run: |
           cd ./dist
