@@ -27,10 +27,10 @@ jobs:
         run: npm run build # Replace with your build command if applicable
 
       - name: Copy package.json
-        run: cp package.json ./build/package.json
+        run: cp package.json ./dist/package.json
 
       - name: Copy Readme
-        run: cp npm-readme.md ./build/Readme.md
+        run: cp npm-readme.md ./dist/Readme.md
 
       - name: Publish to npm
         run: |
