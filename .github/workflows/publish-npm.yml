@@ -19,8 +19,9 @@ jobs:
 
       - name: Authenticate with npm
         run: npm config set //registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}
+
       - name: Install dependencies
-        run: npm i
+        run: npm install
 
       - name: Build package (if necessary)
         run: npm run build # Replace with your build command if applicable
