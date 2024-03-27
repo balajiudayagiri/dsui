@@ -2,15 +2,16 @@
   "name": "@balajiudy/dsui",
   "version": "1.0.2",
   "description": "DSUi best ui components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "access": "public",
   "tag": "latest",
   "message": "Release v1.0.1",
   "dry-run": false,
   "scripts": {
-    "build": "npx babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build": "npx rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,9 @@
     "url": "https://github.com/balajiudayagiri/dsui/issues"
   },
   "homepage": "https://github.com/balajiudayagiri/dsui#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.1"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
@@ -36,7 +36,11 @@
     "@babel/preset-env": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-commonjs": "17.1.0",
+    "@rollup/plugin-node-resolve": "11.2.1",
     "@types/react": "^18.2.72",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^4.9.5"
   }
 }

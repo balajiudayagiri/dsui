@@ -1,0 +1,12 @@
+{
+  "name": "@balajiudy/dsui",
+  "version": "1.0.3",
+  "description": "DSUi best ui components",
+  "main": "index.js",
+  "access": "public",
+  "tag": "latest",
+  "message": "Release v1.0.1",
+  "dry-run": false,
+  "module": "./index.esm.js",
+  "types": "./index.d.ts"
+}

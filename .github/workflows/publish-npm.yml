@@ -26,8 +26,8 @@ jobs:
       - name: Build package (if necessary)
         run: npm run build # Replace with your build command if applicable
 
-      - name: Copy package.json
-        run: cp package.json ./dist/package.json
+      - name: Copy npm-publish.json
+        run: cp npm-publish.json ./dist/npm-publish.json
 
       - name: Copy Readme
         run: cp Readme.md ./dist/Readme.md
