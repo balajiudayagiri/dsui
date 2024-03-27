@@ -26,17 +26,17 @@ jobs:
 
       - name: Building the project
         run: npm run build
-        
+
       - name: Create build directory
-        run: mkdir -p ./build
+        run: mkdir -p ./dist
 
       - name: Copy package.json
-        run: cp npm-publish.json ./build/package.json
+        run: cp npm-publish.json ./dist/package.json
 
       - name: Copy Readme
-        run: cp Readme.md ./build/Readme.md
+        run: cp Readme.md ./dist/Readme.md
 
       - name: Publish to npm
         run: |
-          cd ./build
+          cd ./dist
           npm publish
