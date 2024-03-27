@@ -15,18 +15,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
 
       - name: Install dependencies
         run: npm install
 
       - name: Build package (if necessary)
-        run: npm run build  # Replace with your build command if applicable
+        run: npm run build # Replace with your build command if applicable
 
-      - name: Publish to NPM
-        run: npm publish --access public
+      - name: Publish to npm
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Check if npm publish succeeded
         if: success()
