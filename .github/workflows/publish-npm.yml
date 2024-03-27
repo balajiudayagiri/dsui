@@ -15,19 +15,23 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "18"
 
+      - name: Authenticate with npm
+        run: npm config set //registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}
       - name: Install dependencies
-        run: npm install
+        run: npm i
 
       - name: Build package (if necessary)
         run: npm run build # Replace with your build command if applicable
 
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Copy package.json
+        run: cp npm-publish.json ./build/package.json
 
-      - name: Check if npm publish succeeded
-        if: success()
-        run: echo "NPM package published successfully"
+      - name: Copy Readme
+        run: cp npm-readme.md ./build/Readme.md
+
+      - name: Publish to npm
+        run: |
+          cd ./dist
+          npm publish
