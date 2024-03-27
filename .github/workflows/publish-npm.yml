@@ -26,12 +26,16 @@ jobs:
 
       - name: Building the project
         run: npm run build
+        
+      - name: Create build directory
+        run: mkdir -p ./build
+
       - name: Copy package.json
         run: cp npm-publish.json ./build/package.json
-      - name: Copy LICENSE
-        run: cp LICENSE ./build/LICENSE
+
       - name: Copy Readme
         run: cp npm-readme.md ./build/Readme.md
+
       - name: Publish to npm
         run: |
           cd ./build
