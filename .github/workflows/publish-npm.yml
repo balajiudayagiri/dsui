@@ -34,7 +34,7 @@ jobs:
         run: cp npm-publish.json ./build/package.json
 
       - name: Copy Readme
-        run: cp npm-readme.md ./build/Readme.md
+        run: cp Readme.md ./build/Readme.md
 
       - name: Publish to npm
         run: |
