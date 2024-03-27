@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "DSUi best ui components",
   "main": "index.js",
+  "access": "public",
+  "tag": "latest",
+  "message": "Release v1.0.1",
+  "dry-run": false,
   "scripts": {
     "build": "npx babel src --out-dir dist --extensions \".ts,.tsx\"",
     "test": "react-scripts test",
