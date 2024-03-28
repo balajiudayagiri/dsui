@@ -8,6 +8,7 @@
   "message": "Release v1.0.1",
   "dry-run": false,
   "scripts": {
+    "addDependencies": "node dep-up.js",
     "build": "npx rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -43,5 +44,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.47.0"
   }
 }
