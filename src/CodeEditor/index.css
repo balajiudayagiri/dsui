@@ -1,0 +1,121 @@
+.root {
+    background-color: #2f2f2f;
+    color: white;
+    display: flex;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.folder-structure-root {
+    width: 20%;
+    padding: 10px;
+}
+
+.editor-root {
+    width: 80%;
+}
+
+.tab-container {
+    background: #1e1e1e;
+    display: flex;
+    gap: 1px;
+}
+
+.tab-btn {
+    background: #272626;
+    border: none;
+    color: #ffffff;
+    padding: 6px 10px;
+
+    >span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+.tab-btn-active {
+    background-color: #1e1e1e;
+}
+
+.editor-wrapper {}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* class names */
+
+.w-full {
+    width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* p-1 */
+.p-1 {
+    padding: 0.25rem;
+    /* 4px */
+}
+
+
+/* hover:bg-slate-700 */
+.hover\:bg-slate-700:hover {
+    background-color: #334155;
+    /* This color is approximate. Actual color may vary depending on Tailwind's config. */
+}
+
+/* bg-blue-500 */
+.bg-blue-500 {
+    background-color: #3B82F6;
+    /* This color is approximate. Actual color may vary depending on Tailwind's config. */
+}
+
+/* text-white */
+.text-white {
+    color: #ffffff;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+/* cursor-pointer */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* gap-1 */
+.gap-1 {
+    gap: 0.25rem;
+    /* 4px */
+}
+
+
+/* pr-2 */
+.pr-2 {
+    padding-right: 0.5rem;
+    /* 8px */
+}
+
+/* hover:bg-slate-700 */
+.hover\:bg-slate-700:hover {
+    background-color: #334155;
+    /* This color is approximate. */
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
