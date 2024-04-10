@@ -16,8 +16,10 @@ function excludeStories() {
   };
 }
 
+const inputFiles = glob.sync("src/**/!(*.stories).{ts,tsx}");
+
 export default {
-  input: "src/index.ts", // Entry point of your library
+  input: inputFiles, // Entry point of your library
   output: {
     dir: "dist",
     format: "cjs", // CommonJS format for Node modules
@@ -27,7 +29,14 @@ export default {
     peerDepsExternal(), // Ensures peer dependencies are treated as externals
     resolve(), // Resolves third-party modules in node_modules
     commonjs(), // Converts CommonJS modules to ES6
-    typescript(), // Transpiles TypeScript
+    typescript({
+      exclude: [
+        "**/*.stories.tsx",
+        "**/*.stories.ts",
+        "**/__tests__/**",
+        "**/?(*.)+(spec|test).*",
+      ],
+    }), // Transpiles TypeScript
     postcss(), // Adds PostCSS plugin for handling CSS imports
     excludeStories(),
   ],
