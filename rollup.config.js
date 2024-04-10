@@ -4,6 +4,18 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss"; // Import the plugin
 
+function excludeStories() {
+  return {
+    name: "exclude-stories", // this name will show up in warnings and errors
+    resolveId(source) {
+      if (source.endsWith(".stories.ts") || source.endsWith(".stories.tsx")) {
+        return { id: source, external: true }; // Exclude stories from the bundle
+      }
+      return null; // Include everything else
+    },
+  };
+}
+
 export default {
   input: "src/index.ts", // Entry point of your library
   output: {
@@ -17,6 +29,7 @@ export default {
     commonjs(), // Converts CommonJS modules to ES6
     typescript(), // Transpiles TypeScript
     postcss(), // Adds PostCSS plugin for handling CSS imports
+    excludeStories(),
   ],
   external: ["react", "react-dom"], // Specify any dependencies that should be treated as externals
 };
