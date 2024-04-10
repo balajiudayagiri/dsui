@@ -16,10 +16,8 @@ function excludeStories() {
   };
 }
 
-const inputFiles = glob.sync("src/**/!(*.stories).{ts,tsx}");
-
 export default {
-  input: inputFiles, // Entry point of your library
+  input: "src/index.ts", // Entry point of your library
   output: {
     dir: "dist",
     format: "cjs", // CommonJS format for Node modules
@@ -36,7 +34,7 @@ export default {
         "**/__tests__/**",
         "**/?(*.)+(spec|test).*",
       ],
-    }), // Transpiles TypeScript
+    }), // Transpiles TypeScript // Transpiles TypeScript
     postcss(), // Adds PostCSS plugin for handling CSS imports
     excludeStories(),
   ],
