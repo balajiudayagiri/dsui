@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { ChevronRightIcon } from "./ChevronRightIcon";
 import addLogoToExtension from "./addlogo";
