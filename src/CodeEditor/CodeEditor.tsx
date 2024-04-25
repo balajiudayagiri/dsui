@@ -5,12 +5,33 @@ import buildHierarchy, { getFileExtension, getFileName } from "./utilities";
 import addLogoToExtension from "./addlogo";
 import { Editor } from "@monaco-editor/react";
 import "./index.css";
-export const CodeEditor: FC<CodeEditorTypes> = ({ data }) => {
+
+export const CodeEditor: FC<CodeEditorTypes> = ({
+  data,
+  options,
+  defaultValue,
+  defaultLanguage,
+  defaultPath,
+  path,
+  theme = "vs-dark",
+  line,
+  loading,
+  overrideServices,
+  saveViewState,
+  keepCurrentModel,
+  width,
+  height,
+  className,
+  wrapperProps,
+  beforeMount,
+  onMount,
+  onChange,
+  onValidate,
+}) => {
   const [activeTab, setActiveTab] = useState(
     typeof data === "object" && data ? Object.keys(data)[0] : ""
   );
 
-  // Update useEffect accordingly, checking for object type
   useEffect(() => {
     if (typeof data === "object" && data) {
       setActiveTab(Object.keys(data)[0]);
@@ -24,7 +45,6 @@ export const CodeEditor: FC<CodeEditorTypes> = ({ data }) => {
 
   useEffect(() => {
     if (typeof data === "object" && data) {
-      // Check if 'src/index.js' exists in the data object
       const defaultFile = "src/index.js";
       const initialActiveTab = Object.prototype.hasOwnProperty.call(
         data,
@@ -40,7 +60,6 @@ export const CodeEditor: FC<CodeEditorTypes> = ({ data }) => {
     return <div>No files to display.</div>;
   }
 
-  // Determine if we're dealing with a single file or multiple
   const isSingleFile = typeof data === "string";
 
   return (
@@ -54,7 +73,6 @@ export const CodeEditor: FC<CodeEditorTypes> = ({ data }) => {
       </div>
       <div className="editor-root">
         {!isSingleFile && (
-          // eslint-disable-next-line tailwindcss/no-custom-classname
           <div aria-label="tabs-container" className="tab-container">
             {Object.keys(data).map((fileName) => (
               <button
@@ -65,18 +83,30 @@ export const CodeEditor: FC<CodeEditorTypes> = ({ data }) => {
               </button>
             ))}
           </div>
-          // activeTab === fileName ? "bg-[inherit] " : "bg-[#4b556375]"
         )}
         <div aria-label="code-display" className="editor-wrapper">
-          {/* <CodePreview
-            code={`${isSingleFile ? data : data && activeTab ? data[activeTab] : null}`}
-            language={getFileExtension(activeTab)!}
-          /> */}
           <Editor
-            height="90vh"
-            theme="vs-dark"
+            height="inherit"
             language={getFileExtension(activeTab)}
             value={`${isSingleFile ? data : data && activeTab ? data[activeTab] : null}`}
+            options={options}
+            defaultValue={defaultValue}
+            defaultLanguage={defaultLanguage}
+            defaultPath={defaultPath}
+            path={path}
+            theme={theme}
+            line={line}
+            loading={loading}
+            overrideServices={overrideServices}
+            saveViewState={saveViewState}
+            keepCurrentModel={keepCurrentModel}
+            width={width}
+            className={className}
+            wrapperProps={wrapperProps}
+            beforeMount={beforeMount}
+            onMount={onMount}
+            onChange={onChange}
+            onValidate={onValidate}
           />
         </div>
       </div>

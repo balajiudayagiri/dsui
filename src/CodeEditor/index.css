@@ -2,13 +2,14 @@
     background-color: #2f2f2f;
     color: white;
     display: flex;
-
+    height: inherit;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .folder-structure-root {
     width: 20%;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .editor-root {
@@ -19,6 +20,7 @@
     background: #1e1e1e;
     display: flex;
     gap: 1px;
+    overflow-x: auto;
 }
 
 .tab-btn {
@@ -38,17 +40,27 @@
     background-color: #1e1e1e;
 }
 
-.editor-wrapper {}
+.editor-wrapper {
+    height: calc(100% - 24px);
+}
 
+.tab-container::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
+    background: #88888820;
+    border-radius: 10px;
 }
 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
