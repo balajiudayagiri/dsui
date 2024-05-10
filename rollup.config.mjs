@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss"; // Import the plugin
+import stylexPlugin from "@stylexjs/rollup-plugin";
 
 function excludeStories() {
   return {
@@ -37,6 +38,20 @@ export default {
     }), // Transpiles TypeScript // Transpiles TypeScript
     postcss(), // Adds PostCSS plugin for handling CSS imports
     excludeStories(),
+    stylexPlugin({
+      // Required. File path for the generated CSS file.
+      fileName: "./.dist/stylex.css",
+      // default: false
+      dev: false,
+      // prefix for all generated classNames
+      classNamePrefix: "x",
+      // Required for CSS variable support
+      unstable_moduleResolution: {
+        type: "commonJS",
+        // Assuming your config file is in the project root
+        rootDir: new URL(".", import.meta.url).pathname,
+      },
+    }),
   ],
   external: ["react", "react-dom"], // Specify any dependencies that should be treated as externals
 };

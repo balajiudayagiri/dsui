@@ -1,5 +1,5 @@
 {
-  "name": "@balajiudy/dsui",
+  "name": "@empyreanui/core",
   "version": "1.0.3",
   "description": "DSUi best ui components",
   "main": "dist/index.js",
@@ -52,6 +52,9 @@
     "@storybook/react": "^8.0.6",
     "@storybook/react-webpack5": "^8.0.6",
     "@storybook/test": "^8.0.6",
+    "@stylexjs/babel-plugin": "^0.6.1",
+    "@stylexjs/rollup-plugin": "^0.6.1",
+    "@stylexjs/stylex": "^0.6.1",
     "@types/react": "^18.2.72",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
