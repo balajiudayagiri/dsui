@@ -1,6 +1,6 @@
 {
   "name": "@empyreanui/core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "DSUi best ui components",
   "main": "index.js",
   "access": "public",
