@@ -49,7 +49,7 @@ const Template: StoryFn<typeof ErrorBoundary> = (args) => {
         gap: 10,
       }}>
       <button onClick={() => setTriggerError(!triggerError)} style={{}}>
-        Toggle Error
+        Toggle Error box
       </button>
       <ErrorBoundary {...args}>
         {triggerError ? <ErrorComponent /> : <SafeComponent />}
